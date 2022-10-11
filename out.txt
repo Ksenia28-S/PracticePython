@@ -1,0 +1,10 @@
+f = open('solution.py', encoding='utf-8')
+content = f.read()
+content = content.split('\n')
+for line in content:
+    if line.startswith('# title'):
+        print('+ [{}](#{})\n\n## {}\n'.format(line[8:], line[8:], line[8:]))
+    elif line.startswith('# description'):
+        print('{}\n'.format(line[14:]))
+    else:
+        print(line)
