@@ -4,7 +4,7 @@
 + [Merge two sorted arrays](#merge-two-sorted-arrays)
 
 ## Squares of sorted array
-
+Дан отсортированный список в неубавющем порядке. Вернуть элементы этого списка возведенные в квадрат в неубывающем порядке.
 ```python
 def squares(s):
     result = []
@@ -21,7 +21,7 @@ def squares(s):
 ```
 
 ## Merge two sorted arrays
-
+На входе два отсортированных массива (списка). На выходе получить 1 отсортированный массив.
 ```python
 def merge(first, second):
     result = []
