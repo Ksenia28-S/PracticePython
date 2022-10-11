@@ -3,7 +3,7 @@
 + [Squares of sorted array](#squares-of-sorted-array)
 + [Merge two sorted arrays](#merge-two-sorted-arrays)
 
-## Sqares of sorted array
+## Squares of sorted array
 
 ```python
 def squares(s):
