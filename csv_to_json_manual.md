@@ -1,4 +1,4 @@
-# Конвертер csv в json
+# Конвертер csv в json вручную
 
 ```python
 def read_data_to_list(file_name):
