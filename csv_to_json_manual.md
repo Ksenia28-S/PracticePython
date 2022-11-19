@@ -1,42 +1,44 @@
 # Конвертер csv в json вручную
 
 ```python
-def read_data_to_list(file_name):
-    file = open(file_name)
-    content = file.readlines()
-    file.close()
-    return content  
+class ManualCsvConverter:
+
+    def __init__(self, csv_data):
+        self.title = csv_data[0]
+        self.values = csv_data[1:]
+        
+
+    def prepare_title(self):
+        title = self.title.strip().split(',')
+        return title
+        
+
+    def prepare_row_values(self):
+        values = [row.strip().split(',') for row in self.values]
+        for i in range(len(values)):
+            for j in range(len(values[i])):
+                if values[i][j] == '':
+                    values[i][j] = 'null'
+        return values
 
 
-def write_data(file_name, data):
-    file = open(file_name, 'w')
-    file.write(data)
-    file.close()
-    
-    
-def prepare_data(data):
-    title = data.pop(0).strip().split(',')
-    return title, data
+    def convert_row_to_json(self, data):
+        formatted_values = ",".join([""""{}": {}""".format(key, value) for key, value in data.items()])
+        pretty_line = """{{ {} }}""".format(formatted_values)
+        return pretty_line
 
 
-def convert_row_to_pretty_json(keys, row):
-    values = row.strip().split(',')
-    dictionary = dict(zip(keys, values))
-    template = """{{"id": {}, "name": {}, "birth": {}, "salary": {}, "department": {}}}"""
-    return template.format(*[dictionary.get(k) for k in ['id', 'name', 'birth', 'salary', 'department']])
-
-def convert_csv_to_json(data):
-    title, data = prepare_data(data)        
-    result = [convert_row_to_pretty_json(title, row) for row in data]  
-    return str(result)
-           
-    
-def main():
-    data = read_data_to_list("input.csv")
-    result = convert_csv_to_json(data)
-    write_data("output.json", result)
-
-
-if __name__ == "__main__":
-    main()
+    def to_json(self):
+        title = self.prepare_title()
+        row_values = self.prepare_row_values()
+        
+        self.check_data(title, row_values)
+        
+        result = [self.convert_row_to_json(dict(zip(title, row))) for row in row_values]
+        return "[{}]".format(",".join(result))
+     
+       
+    def check_data(self, title, row_values):
+        for row in row_values:
+            assert len(title) == len(row), "Column count is not equals value count"
 ```
