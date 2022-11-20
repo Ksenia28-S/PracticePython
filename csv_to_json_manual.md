@@ -39,6 +39,7 @@ class ManualCsvConverter:
      
        
     def check_data(self, title, row_values):
+        assert len(row_values) != 0, "No values in data"
         for row in row_values:
             assert len(title) == len(row), "Column count is not equals value count"
 ```
