@@ -56,6 +56,10 @@ list(map(lambda x, y: (x + y, x - y), nums_first, nums_second))
 ```python
 [str(int(n)**2)  for n in numbers if int(n)**2 % 2 == 0]
 ```
+15. Сделать таблицу из input_str = """name,Petya,Vasya,Masha,Vova grade,5,5,8,3 subject,math,language,physics,math year,1999,2000,1995,1998"""
+```python
+[{r.split(',')[0]:r.split(',')[j] for r in input_str.split('\n')} for j in range(1,len(input_str.split('\n')[0].split(',')))]
+```
 16. Получить сумму по столбцам у двумерного списка
 ```python
 list(map(sum,zip(*a)))
