@@ -1,5 +1,3 @@
-# Файл main.py для конвертера из csv в json
-```python
 import os
 
 from csv_to_json_manual import ManualCsvConverter
@@ -32,4 +30,3 @@ def main():
     
 if __name__ == "__main__":
     main()
-```
