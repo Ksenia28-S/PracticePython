@@ -1,6 +1,3 @@
-# Тесты для конвертера
-
-```python
 import unittest
 
 from converter import *
@@ -57,4 +54,3 @@ class TestConverter(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-```
