@@ -1,4 +1,3 @@
-# Тесты к конвертеру из csv в json
 ```python
 import unittest
 
