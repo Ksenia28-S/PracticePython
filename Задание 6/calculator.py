@@ -1,6 +1,3 @@
-# Калькулятор комплексных чисел
-
-```python
 import math
 
 class Complex:
@@ -35,4 +32,3 @@ class Complex:
     
     def __divide__(self, other):
         return Complex((self.re*other.re + self.img*other.img)/(other.re**2 + other.img**2), (other.re*self.img - self.re*other.img)/(other.re**2 + other.img**2))
-```
