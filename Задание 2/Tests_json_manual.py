@@ -1,4 +1,3 @@
-```python
 import unittest
 
 from csv_to_json_manual import ManualCsvConverter
@@ -25,4 +24,3 @@ class TestManualCsvConverter(unittest.TestCase):
             
 if __name__== "__main__":
     unittest.main()
-```
