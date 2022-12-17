@@ -1,6 +1,3 @@
-# Конвертер csv в json вручную
-
-```python
 class ManualCsvConverter:
 
     def __init__(self, csv_data):
@@ -42,4 +39,3 @@ class ManualCsvConverter:
         assert len(row_values) != 0, "No values in data"
         for row in row_values:
             assert len(title) == len(row), "Column count is not equals value count"
-```
