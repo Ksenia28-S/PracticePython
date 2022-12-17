@@ -1,6 +1,3 @@
-# Тесты к калькулятору комплексных чисел
-
-```python
 import unittest
 
 
@@ -70,4 +67,3 @@ class TestComplex(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-```
