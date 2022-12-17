@@ -1,6 +1,3 @@
-# Конвертер из csv в json с помощью библиотек csv и json
-
-```python
 import csv 
 import json 
 
@@ -26,4 +23,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
